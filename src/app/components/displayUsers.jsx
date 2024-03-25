@@ -6,7 +6,6 @@ export default async function DisplayUsers() {
     return (
         <div className="container w-full md:w-4/5 xl:w-3/5 mx-auto px-1 grid gap-6 mb-5 grid-cols-3 ">
             {data && data.map((item) => {
-                console.log(item);
                 return <UserCard
                     key={item.id}
                     name={item.name}
