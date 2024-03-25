@@ -2,6 +2,7 @@ import Image from "next/image";
 import Modal from './components/modal';
 import Datatable from "./components/datatable";
 import Footer from "./components/footer";
+import DisplayUsers from "./components/displayUsers";
 
 import { getInfo, createUser, deleteUser } from '../app/api/users/sheets';
 
@@ -29,9 +30,7 @@ export default async function Home() {
           priority
         ></Image>
       </div>
-      <div className="container w-full md:w-4/5 xl:w-3/5 mx-auto px-2">
-        <Datatable />
-      </div>
+      <DisplayUsers />
       <Footer />
     </main>
   );
