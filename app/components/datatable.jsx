@@ -4,7 +4,6 @@ export default async function Datatable() {
     const data = await getInfo();
     function displayInfo(data) {
         data.forEach((element) => {
-            console.log(element['id']);
             const id = element['id'];
             let timestamp = element['timestamp'];
             // let name = element['name'];

@@ -49,11 +49,8 @@ export async function POST(req, res) {
 
                 //eliminar row de celda
             } catch (err) {
-                console.log(err)
             }
         }
     })
-    console.log(index);
-
     return index
 }

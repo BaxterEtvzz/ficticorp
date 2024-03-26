@@ -32,6 +32,5 @@ export async function POST(req, res) {
         }
     })
     const response = promise;
-    console.log(response);
     return new Response(response)
 }

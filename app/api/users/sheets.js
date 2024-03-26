@@ -91,6 +91,5 @@ export async function deleteUser() {
 
         //eliminar row de celda
     } catch (err) {
-        console.log(err)
     }
 }
