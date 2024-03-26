@@ -8,6 +8,8 @@ export default async function DisplayUsers() {
             {data && data.map((item) => {
                 return <UserCard
                     key={item.id}
+                    id={item.id}
+                    timestamp={item.timestamp}
                     name={item.name}
                     paternal_surname={item.paternal_surname}
                     maternal_surname={item.maternal_surname}

@@ -11,9 +11,12 @@ export default function Footer() {
     const userId = Math.random().toString(36).substring(2)
     const timestamp = Math.floor(Date.now() / 1000)
     const { register, handleSubmit } = useForm();
-    const onSubmit = (formData) => {
+
+    const onSubmit = async (formData) => {
         const values = [userId, timestamp, formData.name, formData.paternal_surname, formData.maternal_surname, formData.email, formData.phone, formData.charge, formData.area, formData.salary]
-        console.log(values);
+        const result = await fetch('api/createuser/', { method: 'POST', body: JSON.stringify({ values }) });
+        setShowModal(false);
+        location.reload();
     }
 
     return (
@@ -31,7 +34,7 @@ export default function Footer() {
             <Modal isVisible={showModal} onClose={() => setShowModal(false)}>
                 <div className='py-6 px-6 lg:px-8 text-left'>
                     <h3 className='text-xl font-medium text-gray-900 mb-4'>Agregar usuario</h3>
-                    <form onSubmit={handleSubmit(onSubmit)} className='space-y-6 p-4 md:p-5' id='formUser'>
+                    <form onSubmit={handleSubmit(onSubmit)} action='#' className='space-y-6 p-4 md:p-5' id='formUser'>
                         <div className='grid gap-4 mb-4 grid-cols-2'>
                             <div className='col-span-2 sm:col-span-1'>
                                 <label

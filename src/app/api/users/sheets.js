@@ -27,7 +27,7 @@ export async function createUser(values) {
             valueInputOption: 'USER_ENTERED',
             requestBody: {
                 values: [
-                    [values]
+                    values
                 ]
             }
         })
